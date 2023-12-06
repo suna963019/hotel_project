@@ -18,7 +18,7 @@ class Guests_allergiesTableSeeder extends Seeder
                 'guest_id' => $i,
                 'allergy_id' => $i,
             ];
-            DB::table('guest_allergies')->insert($param);
+            DB::table('guests_allergies')->insert($param);
             
         }
     }
