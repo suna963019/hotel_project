@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        //通常処理＆Faker処理
+        $this->call(GuestsTableSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(ReserveSeeder::class);
     }
