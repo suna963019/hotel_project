@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         //通常処理＆Faker処理
         $this->call(GuestsTableSeeder::class);
-     
+        $this->call(UserSeeder::class);
+        $this->call(ReserveSeeder::class);
     }
 }
