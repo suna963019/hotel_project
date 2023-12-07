@@ -17,6 +17,7 @@ class ReserveSeeder extends Seeder
         for ($i=1; $i < 6; $i++) { 
             $param=[
                 'user_id'=>$i,
+                'course_id'=>$i,
                 'number'=>2,
                 'datetime'=>fake()->dateTimeBetween('1day', '1month')->format('Y-m-d H:i'),
             ];
