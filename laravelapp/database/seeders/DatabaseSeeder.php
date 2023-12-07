@@ -12,8 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //通常処理＆Faker処理
-        //$this->call(GuestsTableSeeder::class);
         $this->call(AllergiesTableSeeder::class);
+        $this->call(Reserves_guestsTableSeeder::class);
+      $this->call(Foods_allergiesTableSeeder::class);
+        $this->call(CourseSeeder::class);
+        $this->call(Guests_allergiesTableSeeder::class);
+        //通常処理＆Faker処理
+        $this->call(GuestsTableSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(ReserveSeeder::class);
     }
 }

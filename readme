@@ -7,10 +7,12 @@
 外部キーは主キーに当たるidと同じにしてください。
 シーダーのデータの追加は五つにして下さい。
 
-砂原 reserves,guests
+砂原 reserves,users
 天野 foods_allergies,allergies
-中川 uses
+中川 guests
 杉本 cources
 辰巳 guest_allergies
 出口 reserves_guests
 佐藤 foods
+
+期限12/13(水)
