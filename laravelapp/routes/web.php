@@ -30,6 +30,12 @@ Route::post('/login',[AuthController::class,'check']);
 Route::get('/logout',[AuthController::class,'logout'])->middleware('auth');
 //会員情報表示
 Route::get('/acount',[AuthController::class,'index'])->middleware('auth');
+//会員情報変更
+Route::get('/acountedit',[AuthController::class,'edit'])->middleware('auth');
+Route::post('/acountedit',[AuthController::class,'change'])->middleware('auth');
+//会員情報削除
+Route::get('/acountdelete',[AuthController::class,'delete'])->middleware('auth');
+Route::post('/acountdelete',[AuthController::class,'clear'])->middleware('auth');
 
 
 //以下Authのデフォルト
