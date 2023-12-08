@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+//Authのデフォルト用
+// use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,30 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//新規登録
+Route::get('/register',[AuthController::class,'register']);
+Route::post('/register',[AuthController::class,'create']);
+//ログイン
+Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::post('/login',[AuthController::class,'check']);
+//ログアウト
+Route::get('/logout',[AuthController::class,'logout'])->middleware('auth');
+//会員情報表示
+Route::get('/acount',[AuthController::class,'index'])->middleware('auth');
+
+
+//以下Authのデフォルト
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+// require __DIR__.'/auth.php';
+
+

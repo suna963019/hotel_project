@@ -8,12 +8,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>@yield('title')</title>
+    <style>
+        main {
+            min-height: 90vh;
+        }
+    </style>
 </head>
 
 <body>
-
     <header class="d-flex justify-content-between text-white bg-dark">
         <h1>@yield('title')</h1>
+        <div>
+            @auth
+                <div class="d-flex">
+                    <a href="/acount"><h4>会員情報</h4></a>
+                    <a href="/logout"><h4>ログアウト</h4></a>
+                </div>
+            @endauth
+            @guest
+                <div class="d-flex">
+                    <a href="/register"><h5>新規登録</h5></a>
+                    <a href="/login"><h5>ログイン</h5></a>
+                </div>
+            @endguest
+        </div>
         <div class="dropdown pull-right">
             <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
