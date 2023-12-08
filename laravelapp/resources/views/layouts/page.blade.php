@@ -20,13 +20,20 @@
         <h1>@yield('title')</h1>
         <div>
             @auth
-                <div class="d-flex">
-                    <a href="/acount"><h4>会員情報</h4></a>
-                    <a href="/logout"><h4>ログアウト</h4></a>
+            <div class="dropdown pull-right">
+                <button class="btn text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{Auth::user()->name}}
+                </button>
+                <div class="dropdown-menu">
+                    <a href="/acount" class="dropdown-item">会員情報の確認</a>
+                    <a href="/acountedit" class="dropdown-item">会員情報の変更</a>
+                    <a href="/acountdelete" class="dropdown-item">会員情報の削除</a>
+                    <a href="/logout" class="dropdown-item">ログアウト</a>
                 </div>
+            </div>
             @endauth
             @guest
-                <div class="d-flex">
+                <div class="d-flex text-white">
                     <a href="/register"><h5>新規登録</h5></a>
                     <a href="/login"><h5>ログイン</h5></a>
                 </div>

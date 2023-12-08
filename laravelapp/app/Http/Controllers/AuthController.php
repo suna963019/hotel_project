@@ -54,4 +54,26 @@ class AuthController extends Controller
         $items=Auth::user();
         return view('acount.index',['items'=>$items]);
     }
+    //会員情報変更
+    public function edit(){
+        $items=Auth::user();
+        return view('acount.edit',['items'=>$items]);
+    }
+    public function change(Request $request){
+        $user=User::find(Auth::id());
+        $user->name=$request->name;
+        $user->tel=$request->tel;
+        $user->email=$request->email;
+        $user->save();
+        return redirect('/acount');
+    }
+    //会員情報削除
+    public function delete(){
+        $items=Auth::user();
+        return view('acount.delete',['items'=>$items]);
+    }
+    public function clear(Request $request){
+        User::find(Auth::id())->delete();
+        return redirect('/');
+    }
 }
