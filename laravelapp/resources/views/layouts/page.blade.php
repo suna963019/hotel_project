@@ -50,7 +50,7 @@
             <div class="dropdown-menu">
                 <a href="#" class="dropdown-item">ホーム</a>
                 <a href="#" class="dropdown-item">ご予約はこちら</a>
-                <a href="#" class="dropdown-item">メニュー</a>
+                <a href="#" class="dropdown-item">コース</a>
                 <a href="#" class="dropdown-item">お知らせ</a>
                 <a href="#" class="dropdown-item">お問い合わせ</a>
             </div>
@@ -63,7 +63,7 @@
         <div>
             <a href="#" class="dropdown-item">ホーム</a>
             <a href="#" class="dropdown-item">ご予約はこちら</a>
-            <a href="#" class="dropdown-item">メニュー</a>
+            <a href="#" class="dropdown-item">コース</a>
             <a href="#" class="dropdown-item">お知らせ</a>
             <a href="#" class="dropdown-item">お問い合わせ</a>
         </div>

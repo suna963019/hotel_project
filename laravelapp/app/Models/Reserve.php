@@ -22,4 +22,21 @@ class Reserve extends Model
     // {
     //     return $this->all();
     // }
+    protected $guarded = array('id');
+
+    public static $rules = array (
+        // 'user_id'=>'required',
+        // 'course_id'=>'required',
+        'number'=>'required',
+        'datetime'=>'required'
+    );
+
+    public function getData()
+    {
+        return $this->id . ': ' . $this->number. '(' . $this->datetime . ')';
+    }
+ 
+
+
+    use HasFactory;
 }
