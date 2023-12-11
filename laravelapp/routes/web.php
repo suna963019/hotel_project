@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReserveController;
+use App\Models\Reserve;
 //Authのデフォルト用
 // use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +38,10 @@ Route::post('/acountedit',[AuthController::class,'change'])->middleware('auth');
 //会員情報削除
 Route::get('/acountdelete',[AuthController::class,'delete'])->middleware('auth');
 Route::post('/acountdelete',[AuthController::class,'clear'])->middleware('auth');
+
+
+//予約内容表示
+Route::get('/reserve', [ReserveController::class, 'index']);// ->middleware('auth');
 
 
 //以下Authのデフォルト
