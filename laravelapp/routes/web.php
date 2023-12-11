@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 // use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use function PHPUnit\Framework\returnSelf;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//予約
+Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
+Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
 
 //新規登録
 Route::get('/register',[AuthController::class,'register']);
