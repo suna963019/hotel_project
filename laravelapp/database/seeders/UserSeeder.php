@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'email'=>'admin@mail',
             'password'=>Hash::make('password'),
         ];
-        User::created($param);
+        User::create($param);
         User::factory()->count(4)->create();
     }
 }
