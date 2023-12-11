@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Model;
 use App\Models\Reserve as ModelsReserve;
 use App\Models\Course as ModelsCourse;
 use Illuminate\Http\Request;
@@ -9,6 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ReserveController extends Controller
 {
+    public function index()
+    {
+        $user_id = Auth::id();
+        $items = ModelsReserve::where('user_id',$user_id)->get();
+        return view('reserve.index', ['items' => $items]);
+    }
     public function index(Request $request)
     {
         $items = ModelsReserve::all();
