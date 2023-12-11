@@ -5,7 +5,7 @@
             @csrf
             <tr>
                 <th>user_id: </th>
-                <td><input type="text" name="user_id"></td>
+                <td><input type="text" name="user_id" ></td>
             </tr>
             <tr>
                 <th>course_id: </th>
