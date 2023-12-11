@@ -8,9 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class ReserveController extends Controller
 {
+    public function index(Request $request)
+    {
+        $items = ModelsReserve::all();
+        return view('reserve.index',['items' => $items]);
+    }
+
     public function add(Request $request)
     {
-        return view('reserve.add');
+        $items = ModelsCourse::all();
+        return view('reserve.add',['items' => $items]);
     }
 
     public function create(Request $request)
