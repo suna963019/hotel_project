@@ -27,9 +27,9 @@ class AuthController extends Controller
             return redirect('/');
         }
         User::create(
-            $request
+            $request->only('name','tel','email','password')
         );
-        if (Auth::attempt($request->only("email","password"))) {
+        if (Auth::attempt($request->only('email','password'))) {
             return redirect('/acount');
         }
         return redirect('/login');
