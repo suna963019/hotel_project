@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use function PHPUnit\Framework\returnSelf;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
+Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
+
+
+
+
+
+
+
