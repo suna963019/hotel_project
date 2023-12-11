@@ -19,8 +19,13 @@ use function PHPUnit\Framework\returnSelf;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
+
+Route::get('/menu', function () {
+    return view('/menu');
+});
+
 
 //予約
 Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
