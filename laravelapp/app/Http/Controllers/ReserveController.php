@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Reserve as ModelsReserve;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReserveController extends Controller
 {
@@ -14,6 +15,7 @@ class ReserveController extends Controller
 
     public function create(Request $request)
     {
+        $user_id = Auth::id(); 
         $this->validate($request, ModelsReserve::$rules);
         $reserve = new ModelsReserve();
         $form = $request->all();
