@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reserve as ModelsReserve;
+use App\Models\Course as ModelsCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
