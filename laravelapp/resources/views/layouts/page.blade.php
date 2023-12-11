@@ -48,11 +48,9 @@
                 </svg>
             </button>
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">ホーム</a>
-                <a href="#" class="dropdown-item">ご予約はこちら</a>
-                <a href="#" class="dropdown-item">コース</a>
-                <a href="#" class="dropdown-item">お知らせ</a>
-                <a href="#" class="dropdown-item">お問い合わせ</a>
+                <a href="/" class="dropdown-item">ホーム</a>
+                <a href="/reserve" class="dropdown-item">ご予約はこちら</a>
+                <a href="/course" class="dropdown-item">コース</a>
             </div>
         </div>
     </header>
@@ -61,11 +59,9 @@
     </main>
     <footer class="text-white bg-dark d-flex justify-content-around mt-100">
         <div>
-            <a href="#" class="dropdown-item">ホーム</a>
-            <a href="#" class="dropdown-item">ご予約はこちら</a>
-            <a href="#" class="dropdown-item">コース</a>
-            <a href="#" class="dropdown-item">お知らせ</a>
-            <a href="#" class="dropdown-item">お問い合わせ</a>
+            <a href="/" class="dropdown-item">ホーム</a>
+            <a href="/reserve" class="dropdown-item">ご予約はこちら</a>
+            <a href="/course" class="dropdown-item">コース</a>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
