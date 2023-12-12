@@ -25,22 +25,19 @@
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
         }
 
-        .content {
-            text-align: center;
+        #all {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .home img {
             width: 500px;
-        }
-
-        .logo img {
-            width: 240px;
-        }
-
-        .card-text {
-            text-align: left;
         }
 
         .links a {
@@ -54,13 +51,10 @@
             margin: 12px 0px;
         }
 
-        .container2 {
-            display: flex;
-            justify-content: space-around;
-        }
-
         /* 砂原追加 */
-        p, a,button,th {
+        p,
+        a,
+        th {
             text-decoration: none;
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
@@ -77,13 +71,6 @@
             margin: 100px 30px 30px 30px;
         }
 
-        footer div {
-            padding: 0 160px;
-        }
-
-        footer div div {
-            padding: 0;
-        }
 
         .cpr {
             text-transform: none;
@@ -92,41 +79,79 @@
         .acount p {
             margin: 16px 10px 0% 10px;
         }
+
+        .text-center {
+            min-width: 30px;
+        }
+
+        .acount-submit {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="d-flex justify-content-between">
-            <div class="title logo">
-                <a href="/"><img src="{{ url('img/logo.png') }}" alt="Restaurante Sunahara"></a>
+    <div id="all">
+        <header>
+            <div class="d-flex justify-content-between">
+                <div class="title logo">
+                    <a href="/"><img src="{{ url('img/logo.png') }}" alt="Restaurante Sunahara"></a>
+                </div>
+                <div class="dropdown ">
+                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-list menuicon" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu links">
+                        <a href="/" class="dropdown-item">Home</a>
+                        <a href="/reserve/add" class="dropdown-item">Reserve</a>
+                        <a href="/course" class="dropdown-item">Menu</a>
+                    </div>
+                </div>
             </div>
-            <div class="dropdown ">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                        class="bi bi-list menuicon" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                    </svg>
-                </button>
-                <div class="dropdown-menu links">
+            <div class="d-flex justify-content-start">
+                <div class="dropdown">
+                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        @auth
+                            {{ Auth::user()->name }}様
+                        @endauth
+                        @guest
+                            ゲスト様
+                        @endguest
+                    </button>
+                    <div class="dropdown-menu links">
+                        @auth
+                        <a href="/reserve/index" class="dropdown-item">予約の確認</a>
+                            <a href="/acount" class="dropdown-item">会員情報の確認</a>
+                            <a href="/acountedit" class="dropdown-item">会員情報の変更</a>
+                            <a href="/acountdelete" class="dropdown-item">会員情報の削除</a>
+                            <a href="/logout" class="dropdown-item">Logout</a>
+                        @endauth
+                        @guest
+                            <a href="/register" class="dropdown-item">Register</a>
+                            <a href="/login" class="dropdown-item">Login</a>
+                        @endguest
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <main class="d-flex justify-content-around">
+            @yield('content')
+        </main>
+        <footer>
+            <div class="d-flex justify-content-center ">
+                <div class="links">
                     <a href="/" class="dropdown-item">Home</a>
                     <a href="/reserve/add" class="dropdown-item">Reserve</a>
                     <a href="/course" class="dropdown-item">Menu</a>
                 </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-start">
-            <div class="dropdown">
-                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    @auth
-                        {{ Auth::user()->name }}様
-                    @endauth
-                    @guest
-                        ゲスト様
-                    @endguest
-                </button>
-                <div class="dropdown-menu links">
+                <div class="links">
                     @auth
                         <a href="/acount" class="dropdown-item">会員情報の確認</a>
                         <a href="/acountedit" class="dropdown-item">会員情報の変更</a>
@@ -139,35 +164,10 @@
                     @endguest
                 </div>
             </div>
-        </div>
+            <p class="cpr text-end"><small>copyright 2023 sunahara.</small></p>
 
-    </header>
-    <main class="d-flex justify-content-around">
-        @yield('content')
-    </main>
-    <footer>
-        <div class="d-flex justify-content-around ">
-            <div class="links">
-                <a href="/" class="dropdown-item">Home</a>
-                <a href="/reserve/add" class="dropdown-item">Reserve</a>
-                <a href="/course" class="dropdown-item">Menu</a>
-            </div>
-            <div class="links">
-                @auth
-                    <a href="/acount" class="dropdown-item">会員情報の確認</a>
-                    <a href="/acountedit" class="dropdown-item">会員情報の変更</a>
-                    <a href="/acountdelete" class="dropdown-item">会員情報の削除</a>
-                    <a href="/logout" class="dropdown-item">Logout</a>
-                @endauth
-                @guest
-                    <a href="/register" class="dropdown-item">Register</a>
-                    <a href="/login" class="dropdown-item">Login</a>
-                @endguest
-            </div>
-        </div>
-        <p class="cpr text-end"><small>copyright 2023 sunahara.</small></p>
-
-    </footer>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
     </script>
