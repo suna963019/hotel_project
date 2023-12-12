@@ -7,15 +7,15 @@
 @section('content')
 <table>
     <tr>
-        <th>お名前</th>
+        <th>name</th>
         <td>{{$items->name}}</td>
     </tr>
     <tr>
-        <th>電話番号</th>
+        <th>tel</th>
         <td>{{$items->tel}}</td>
     </tr>
     <tr>
-        <th>メール</th>
+        <th>e-mail</th>
         <td>{{$items->email}}</td>
     </tr>
 </table>

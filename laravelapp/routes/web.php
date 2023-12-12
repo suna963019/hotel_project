@@ -21,7 +21,7 @@ use function PHPUnit\Framework\returnSelf;
 */
 
 Route::get('/', function () {
-    return view('top');
+    return view('home');
 });
 
 Route::get('/menu', function () {

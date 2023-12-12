@@ -1,7 +1,7 @@
 @extends('layouts.page')
 
 @section('title')
-    index
+    delete
 @endsection
 
 @section('content')
@@ -9,19 +9,19 @@
 <form action="/acountdelete" method="POST">
     @csrf
     <input type="hidden" name="id" value="{{$items->id}}">
-    <input type="submit" value="削除">
+    <input type="submit" value="Delete">
 </form>
 <table>
     <tr>
-        <th>お名前</th>
+        <th>name</th>
         <td>{{$items->name}}</td>
     </tr>
     <tr>
-        <th>電話番号</th>
+        <th>tel</th>
         <td>{{$items->tel}}</td>
     </tr>
     <tr>
-        <th>メール</th>
+        <th>mail</th>
         <td>{{$items->email}}</td>
     </tr>
 </table>

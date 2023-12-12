@@ -16,11 +16,6 @@ class ReserveController extends Controller
         $items = ModelsReserve::where('user_id',$user_id)->get();
         return view('reserve.index', ['items' => $items]);
     }
-    public function index(Request $request)
-    {
-        $items = ModelsReserve::all();
-        return view('reserve.index',['items' => $items]);
-    }
 
     public function add(Request $request)
     {
