@@ -4,6 +4,7 @@
 
 @section('content')
     <table class="table">
+        
         <tr>
             <th>コース名</th>
             <th>人数</th>

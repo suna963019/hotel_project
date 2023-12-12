@@ -160,6 +160,7 @@
                     @guest
                         <a href="/register" class="dropdown-item">Register</a>
                         <a href="/login" class="dropdown-item">Login</a>
+                        <a href="/reserve/del" class="dropdown-item">delete</a>
                     @endguest
                 </div>
             </div>
