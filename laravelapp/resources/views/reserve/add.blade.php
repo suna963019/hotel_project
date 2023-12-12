@@ -1,25 +1,13 @@
-<html>
+@extends('layouts.page')
 
-<head>
-    <title>予約フォーム</title>
-    <style>
-        body {
-            font-size: 16pt;
-            color: #999;
-        }
+@section('title', 'Reserve.Add')
 
-        h1 {
-            font-size: 50pt;
-            text-align: right;
-            color: #f6f6f6;
-            margin: -20px 0px -30px 0px;
-            letter-spacing: -4pt;
-        }
-    </style>
-</head>
+@section('menubar')
+    @parent
+    予約ページ
+@endsection
 
-<body>
-    <h1>予約フォーム</h1>
+@section('content')
     @if (count($errors) > 0)
         <div>
             <ul>
@@ -29,16 +17,15 @@
             </ul>
         </div>
     @endif
+
     <form action="/reserve/add" method="post">
         @csrf
+        <p>予約フォーム</p>
+        <br>
         <table>
             <tr>
-                <th>予約フォーム</th>
-            </tr>
-
-
-            <tr>
-                <th>コースID(ハンバーグコースは１，エビフライコースは２を入力):</th>
+                <th>コースID:</th>
+                <td class="text-center">:</td>
                 <td> <select name="course_id">
                         @foreach ($items as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -48,20 +35,22 @@
             </tr>
 
             <tr>
-                <th>予約人数:</th>
+                <th>予約人数</th>
+                <td class="text-center">:</td>
                 <td><input type="number" name="number" value="{{ old('number') }}"></td>
             </tr>
             <tr>
-                <th>予約日程:</th>
+                <th>予約日程</th>
+                <td class="text-center">:</td>
                 <td><input type="date" name="datetime" value="{{ old('datetime') }}"></td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit" value="send"></td>
-            </tr>
         </table>
+        <div class="acount-submit">
+            <input type="submit" value="submit">
+        </div>
     </form>
-</body>
+    </body>
+@endsection
 
 
 @section('footer')

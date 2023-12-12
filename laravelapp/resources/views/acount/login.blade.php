@@ -18,15 +18,9 @@
                 <td class="text-center">:</td>
                 <td><input type="text" name="password"></td>
             </tr>
-            <tr>
-                <th></th>
-                <td></td>
-                <td><br></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit" value="Login"></td>
-            </tr>
         </table>
+        <div class="acount-submit">
+            <input type="submit" value="Login">
+        </div>
     </form>
 @endsection

@@ -23,15 +23,9 @@
                 <td class="text-center">:</td>
                 <td><input type="email" name="email" value="{{$items->email}}"></td>
             </tr>
-            <tr>
-                <th></th>
-                <td></td>
-                <td><br></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit" value="Change"></td>
-            </tr>
         </table>
+        <div class="acount-submit">
+            <input type="submit" value="Change">
+        </div>
     </form>
 @endsection

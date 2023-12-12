@@ -20,7 +20,7 @@ use function PHPUnit\Framework\returnSelf;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//ホームページ
 Route::get('/', function () {
     return view('home');
 });
@@ -28,13 +28,10 @@ Route::get('/', function () {
 // Route::get('/menu', function () {
 //     return view('/menu');
 // });
-
+//メニュー
 Route::get('/course', [CourseController::class, 'index']);
 
 
-//予約
-Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
-Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
 
 //新規登録
 Route::get('/register',[AuthController::class,'register']);
@@ -52,11 +49,18 @@ Route::post('/acountedit',[AuthController::class,'change'])->middleware('auth');
 //会員情報削除
 Route::get('/acountdelete',[AuthController::class,'delete'])->middleware('auth');
 Route::post('/acountdelete',[AuthController::class,'clear'])->middleware('auth');
-
+Route::get('reserve/del','ReserveController@delete');
+Route::post('reserve/del','ReserveController@remove');
 
 //予約内容表示
-Route::get('/reserve', [ReserveController::class, 'index']);// ->middleware('auth');
+Route::get('/reserve/index', [ReserveController::class, 'index'])->middleware('auth');
 
+//予約
+Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
+Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
+//予約削除
+Route::get('reserve/del', 'App\Http\Controllers\ReserveController@delete');
+Route::post('reserve/del', 'App\Http\Controllers\ReserveController@remove');
 
 //以下Authのデフォルト
 // Route::get('/dashboard', function () {
