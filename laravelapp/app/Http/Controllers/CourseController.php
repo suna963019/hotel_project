@@ -10,6 +10,6 @@ class CourseController extends Controller
     public function index(Request $request)
     {
         $items = Course::all();
-        return view('course.index', ['items' => $items]);
+        return view('menu', ['menus' => $items]);
     }
 }

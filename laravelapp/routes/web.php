@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ReserveController;
 use App\Models\Reserve;
 //Authのデフォルト用
@@ -19,7 +20,7 @@ use function PHPUnit\Framework\returnSelf;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//ホームページ
 Route::get('/', function () {
     return view('home');
 });
@@ -27,7 +28,8 @@ Route::get('/', function () {
 // Route::get('/menu', function () {
 //     return view('/menu');
 // });
-
+//メニュー
+Route::get('/course', [CourseController::class, 'index']);
 
 
 
@@ -56,7 +58,7 @@ Route::get('/reserve/index', [ReserveController::class, 'index'])->middleware('a
 //予約
 Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
 Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
-
+//予約削除
 Route::get('reserve/del', 'App\Http\Controllers\ReserveController@delete');
 Route::post('reserve/del', 'App\Http\Controllers\ReserveController@remove');
 
