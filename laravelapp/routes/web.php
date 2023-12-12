@@ -47,7 +47,8 @@ Route::post('/acountedit',[AuthController::class,'change'])->middleware('auth');
 //会員情報削除
 Route::get('/acountdelete',[AuthController::class,'delete'])->middleware('auth');
 Route::post('/acountdelete',[AuthController::class,'clear'])->middleware('auth');
-
+Route::get('reserve/del','ReserveController@delete');
+Route::post('reserve/del','ReserveController@remove');
 
 //予約内容表示
 Route::get('/reserve/index', [ReserveController::class, 'index'])->middleware('auth');
@@ -56,6 +57,8 @@ Route::get('/reserve/index', [ReserveController::class, 'index'])->middleware('a
 Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
 Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
 
+Route::get('reserve/del', 'App\Http\Controllers\ReserveController@delete');
+Route::post('reserve/del', 'App\Http\Controllers\ReserveController@remove');
 
 //以下Authのデフォルト
 // Route::get('/dashboard', function () {

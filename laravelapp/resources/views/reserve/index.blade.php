@@ -17,7 +17,6 @@
                     <td>{{ $item->course->name }}</td>
                     <td>{{ $item->number }}</td>
                     <td>{{ $item->datetime }}</td>
-
                 </tr>
             @endforeach
         </table>
