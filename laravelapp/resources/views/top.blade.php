@@ -71,12 +71,17 @@
             } 
 
             img {
-                width: 500px;       
+                width: 800px;       
             }
 
             .logo img {
-                width: 200px;
+                width: 300px;
+                margin-left: 430px;
             }
+
+            .main1 img{
+            width: 45%;
+        }
 
 
             .card {
@@ -105,10 +110,10 @@
                 margin-left: 20px;
               
             }
-            .container2 {
+            /* .container2 {
                 display: flex;
                 justify-content: space-around;
-            }
+            } */
             .btn {         
              
                 border:1px solid darkgray;
@@ -121,9 +126,7 @@
                 
             }
 
-            button {
-                
-            }
+        
        
         </style>
     </head>

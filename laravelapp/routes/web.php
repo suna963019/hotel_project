@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ReserveController;
 use App\Models\Reserve;
 //Authのデフォルト用
@@ -24,9 +25,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/menu', function () {
-    return view('/menu');
-});
+// Route::get('/menu', function () {
+//     return view('/menu');
+// });
+
+Route::get('/course', [CourseController::class, 'index']);
 
 
 //予約

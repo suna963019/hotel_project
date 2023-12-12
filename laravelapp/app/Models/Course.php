@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
+
+    protected $guarded = array('id');
+
+    public static $rules = array(
+        'name' => 'required',
+        'price' => 'required',
+    );
 }
