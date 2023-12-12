@@ -1,7 +1,7 @@
 @extends('layouts.page')
 
 @section('title')
-    index
+    login
 @endsection
 
 @section('content')
@@ -9,17 +9,18 @@
         @csrf
         <table>
             <tr>
-                <th>メール</th>
+                <th>mail</th>
+                <td class="text-center">:</td>
                 <td><input type="email" name="email"></td>
             </tr>
             <tr>
-                <th>パスワード</th>
+                <th>password</th>
+                <td class="text-center">:</td>
                 <td><input type="text" name="password"></td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit" value="ログイン"></td>
-            </tr>
         </table>
+        <div class="acount-submit">
+            <input type="submit" value="Login">
+        </div>
     </form>
 @endsection

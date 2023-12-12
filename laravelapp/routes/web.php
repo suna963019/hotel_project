@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReserveController;
 use App\Models\Reserve;
 //Authのデフォルト用
 // use App\Http\Controllers\ProfileController;
@@ -20,12 +21,15 @@ use function PHPUnit\Framework\returnSelf;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-//予約
-Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
-Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
+// Route::get('/menu', function () {
+//     return view('/menu');
+// });
+
+
+
 
 //新規登録
 Route::get('/register',[AuthController::class,'register']);
@@ -45,6 +49,14 @@ Route::get('/acountdelete',[AuthController::class,'delete'])->middleware('auth')
 Route::post('/acountdelete',[AuthController::class,'clear'])->middleware('auth');
 Route::get('reserve/del','ReserveController@delete');
 Route::post('reserve/del','ReserveController@remove');
+
+//予約内容表示
+Route::get('/reserve/index', [ReserveController::class, 'index'])->middleware('auth');
+
+//予約
+Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
+Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
+
 
 //以下Authのデフォルト
 // Route::get('/dashboard', function () {

@@ -1,7 +1,7 @@
 @extends('layouts.page')
 
 @section('title')
-    index
+    register
 @endsection
 
 @section('content')
@@ -9,29 +9,33 @@
         @csrf
         <table>
             <tr>
-                <th>お名前</th>
+                <th>name</th>
+                <td class="text-center">:</td>
                 <td><input type="text" name="name"></td>
             </tr>
             <tr>
-                <th>電話番号</th>
+                <th>tel</th>
+                <td class="text-center">:</td>
                 <td><input type="tel" name="tel"></td>
             </tr>
             <tr>
-                <th>メール</th>
+                <th>e-mail</th>
+                <td class="text-center">:</td>
                 <td><input type="email" name="email"></td>
             </tr>
             <tr>
-                <th>パスワード</th>
+                <th>password</th>
+                <td class="text-center">:</td>
                 <td><input type="text" name="password"></td>
             </tr>
             <tr>
-                <th>パスワード（再度）</th>
+                <th>password（check）</th>
+                <td class="text-center">:</td>
                 <td><input type="text" name="password_confirmation"></td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit" value="登録"></td>
-            </tr>
         </table>
+        <div class="acount-submit">
+            <input type="submit" value="Register">
+        </div>
     </form>
 @endsection
