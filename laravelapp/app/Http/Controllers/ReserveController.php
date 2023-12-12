@@ -36,18 +36,13 @@ class ReserveController extends Controller
 
     public function delete(Request $request)
     {
-        $user_id = Auth::id();
-        $reserve = ModelsReserve::where('user_id', $user_id)->get();
-        $check = false;
-        if (ModelsReserve::where('user_id', $user_id)->first() === null) {
-            $check = true;
-        }
-        return view('reserve.del', ['forms' => $reserve, 'check' => $check]);
+        $reserve = ModelsReserve::where('id', $request->id)->first();
+        return view('reserve.del', ['form' => $reserve]);
     }
 
     public function remove(Request $request)
     {
         ModelsReserve::find($request->id)->delete();
-        return redirect('/reserve/del');
+        return redirect('/reserve/index');
     }
 }

@@ -33,6 +33,10 @@
         #all {
             width: 100%;
             margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
         }
 
         .home img {
@@ -87,6 +91,9 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
+        }
+        .reserve-table{
+            max-width:1000px; 
         }
     </style>
 </head>
