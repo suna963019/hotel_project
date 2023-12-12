@@ -20,12 +20,12 @@
 
     <form action="/reserve/add" method="post">
         @csrf
+        <p>予約フォーム</p>
+        <br>
         <table>
             <tr>
-                <th>予約フォーム</th>
-            </tr>
-            <tr>
                 <th>コースID:</th>
+                <td class="text-center">:</td>
                 <td> <select name="course_id">
                         @foreach ($items as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -35,18 +35,19 @@
             </tr>
 
             <tr>
-                <th>予約人数:</th>
+                <th>予約人数</th>
+                <td class="text-center">:</td>
                 <td><input type="number" name="number" value="{{ old('number') }}"></td>
             </tr>
             <tr>
-                <th>予約日程:</th>
+                <th>予約日程</th>
+                <td class="text-center">:</td>
                 <td><input type="date" name="datetime" value="{{ old('datetime') }}"></td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit" value="send"></td>
-            </tr>
         </table>
+        <div class="acount-submit">
+            <input type="submit" value="submit">
+        </div>
     </form>
     </body>
 @endsection
