@@ -24,14 +24,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/menu', function () {
-    return view('/menu');
-});
+// Route::get('/menu', function () {
+//     return view('/menu');
+// });
 
 
-//予約
-Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
-Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
+
 
 //新規登録
 Route::get('/register',[AuthController::class,'register']);
@@ -52,7 +50,11 @@ Route::post('/acountdelete',[AuthController::class,'clear'])->middleware('auth')
 
 
 //予約内容表示
-Route::get('/reserve', [ReserveController::class, 'index']);// ->middleware('auth');
+Route::get('/reserve/index', [ReserveController::class, 'index'])->middleware('auth');
+
+//予約
+Route::get('reserve/add', 'App\Http\Controllers\ReserveController@add');
+Route::post('reserve/add', 'App\Http\Controllers\ReserveController@create');
 
 
 //以下Authのデフォルト
