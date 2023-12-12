@@ -23,4 +23,16 @@ class ReserveController extends Controller
         $reserve->fill($form)->save();
         return redirect('/reserve/add');
     }
+
+    public function delete(Request $request)
+    {
+        $reserve = ModelsReserve::find($request->id);
+        return view('reserve.del',['form' => $reserve]);
+    }
+
+    public function remove(Request $request)
+    {
+        ModelsReserve::find($request->id)->delete();
+        return redirect('/reserve');
+    }
 }
