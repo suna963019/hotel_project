@@ -47,7 +47,8 @@ Route::post('/acountedit',[AuthController::class,'change'])->middleware('auth');
 //会員情報削除
 Route::get('/acountdelete',[AuthController::class,'delete'])->middleware('auth');
 Route::post('/acountdelete',[AuthController::class,'clear'])->middleware('auth');
-
+Route::get('reserve/del','ReserveController@delete');
+Route::post('reserve/del','ReserveController@remove');
 
 //予約内容表示
 Route::get('/reserve/index', [ReserveController::class, 'index'])->middleware('auth');

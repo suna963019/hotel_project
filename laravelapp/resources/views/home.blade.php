@@ -9,7 +9,7 @@
         </div>
         <div class="links d-flex justify-content-around">
             <a href="/reserve">Reserve</a>
-            <a href="/course">Menu</menu></a>
+            <a href="/courses">Menu</menu></a>
         </div>
     </div>
 @endsection

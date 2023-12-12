@@ -31,7 +31,6 @@
         }
 
         #all {
-            max-width: 1000px;
             width: 100%;
             margin: 0 auto;
         }
@@ -149,7 +148,7 @@
                 <div class="links">
                     <a href="/" class="dropdown-item">Home</a>
                     <a href="/reserve/add" class="dropdown-item">Reserve</a>
-                    <a href="/course" class="dropdown-item">Menu</a>
+                    <a href="/courses" class="dropdown-item">Menu</a>
                 </div>
                 <div class="links">
                     @auth
