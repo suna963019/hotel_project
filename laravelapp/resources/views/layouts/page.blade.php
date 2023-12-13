@@ -46,7 +46,7 @@
         .links a {
             color: #636b6f;
             padding: 0 25px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             letter-spacing: .1rem;
             text-decoration: none;
@@ -77,6 +77,7 @@
 
         .cpr {
             text-transform: none;
+            margin-top: 80px;
         }
 
         .acount p {
@@ -151,7 +152,7 @@
             @yield('content')
         </main>
         <footer>
-            <div class="d-flex justify-content-center ">
+            <div class="d-flex justify-content-evenly ">
                 <div class="links">
                     <a href="/" class="dropdown-item">Home</a>
                     <a href="/reserve/add" class="dropdown-item">Reserve</a>
